@@ -6,17 +6,17 @@ const PORT = process.env.PORT || 3000;
 // Middleware
 app.use(express.json());
 
-// Connecter à la base de données
+// Connect to the database
 mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log('Connecté à la base de données'))
-  .catch(err => console.error('Échec de la connexion à la base de données', err));
+  .then(() => console.log('Connected to the database'))
+  .catch(err => console.error('Failed to connect to the database', err));
 
 // Routes
 app.get('/', (req, res) => {
-    res.send('API de Gestion de Données Cloud');
+    res.send('Cloud Data Management API');
 });
 
-// Démarrer le serveur
+// Start the server
 app.listen(PORT, () => {
-    console.log(`Serveur en cours d\'exécution sur le port ${PORT}`);
+    console.log(`Server running on port ${PORT}`);
 });
